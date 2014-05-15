@@ -6,32 +6,66 @@ my_family_pets_ages = {"Evi" => 6, "Hoobie" => 3, "George" => 12, "Bogart" => 4,
 
 # Person 1's solution
 def my_array_finding_method(source, thing_to_find)
-  # Your code here!
+	source.grep(/#{thing_to_find}/)
 end
 
 def my_hash_finding_method(source, thing_to_find)
-  # Your code here!
+	age_match = []
+  	source.each do |key, value|
+  		age_match << key if value == thing_to_find
+  	end
+  	age_match
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
+
+=begin
+# my_array_finding_method
+
+	For the first method I used the .grep method:
+	http://www.ruby-doc.org/core-2.1.1/Enumerable.html#method-i-grep
+
+# my_hash_finding_method
+
+	For the second method I used the .each method do loop through, 
+	find the values that are equal to thing_to_find, and push the 
+	corresponding key into the empty array created outside the loop. 
+	I then display this array at the end.
+=end
 
 # Person 2
 def my_array_modification_method(source, thing_to_modify)
-  # Your code here!
+	source.map! do |x|
+  		if x.is_a?(Integer) 
+  			x + thing_to_modify
+  		else
+  			x
+  		end
+  	end
 end
 
 def my_hash_modification_method(source, thing_to_modify)
-  # Your code here!
+	source.each do |name, age|
+		source[name] += thing_to_modify
+	end
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
 
+=begin
+# my_array_modification_method
+ 	
+ 	I used the .map! method along with .is_a? logic in order to 
+ 	find the integers in the data structure. Then I added the value to it.
+
+ 	http://www.ruby-doc.org/core-2.1.1/Array.html
+
+
+# my_hash_modification_method
+
+	I used a simple .each method to loop through, find the 
+	index where source was equal to the name and change the age.
+=end
 
 # Person 3
 def my_array_sorting_method(source)
@@ -78,8 +112,12 @@ p my_array_deletion_method(i_want_pets, "a") == ["I", 4, "pets", "but", "I", "on
 p my_hash_deletion_method(my_family_pets_ages, "George") == {"Evi" => 8, "Hoobie" => 5, "Bogart" => 6, "Poly" => 6, "Annabelle" => 2, "Ditto" => 5}
 
 # Reflect!
-# 
-# 
-# 
-# 
-# 
+
+=begin
+Overall I thought this challenge was quite difficult (especially the first part). 
+Once I understood how to use .map! it was not a big deal at all, but it was very 
+frustrating trying to figure out how to map it before then. I also had a few syntax 
+errors along the way that caused me trouble. In the future I will be more cognizant 
+of these issues. Overall I enjoyed the exercises and learned a LOT!
+=end
+
