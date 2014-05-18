@@ -69,31 +69,36 @@ end
 
 # Person 3
 def my_array_sorting_method(source)
-  # Your code here!
-end
+
+   source.map { |value| value.to_s }.sort_by{|value| value}
+
+ end
 
 def my_hash_sorting_method(source)
-  # Your code here!
+   source.sort_by{ |key,value| [value , key]}
+
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
-#
-
+# I chose to use the sort_by method to complete this release. Sort_by is good if the values
+# you're sorting on require some kind of complex calculation or operation to get their value. 
+# using the sort() method would require a greater number of comparision operations to determine 
+# where the item goes in a ordered list.  Sort_by only calls this comparision operatoion once to 
+# make the same ordered list.  Sort_by is considered more efficient for larger sets of data. 
 
 # Person 4
 def my_array_deletion_method(source, thing_to_delete)
-  #Your code here!
+ p source.delete_if {|thing_to_modify| thing_to_modify.to_s.include? (thing_to_delete)}
 end
 
 def my_hash_deletion_method(source, thing_to_delete)
-  #Your code here!
+  p source.delete_if {|thing_to_modify| thing_to_modify.to_s.include? (thing_to_delete)}
 end
 
 # Identify and describe the ruby method you implemented. 
-# 
-#
+#I chose to use the delete_if method.  it takes the item you identify in the code block, deletes it from your 
+# data structure, and returns the new values.  I had also thought about using reject, but that 
+# method does not change the array and will return nil.
 #
 
 
