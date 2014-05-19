@@ -1,4 +1,4 @@
-require_relative "my_solution"
+require_relative "my_solution.rb"
 
 describe Array do
   let!(:empty_array)  { [] }
